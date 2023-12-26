@@ -30,8 +30,8 @@ class _AddPersonDialogState extends State<AddPersonDialog> {
                     age: int.parse(ageController.text),
                   );
                   await localStorage.addToBoxWithKey(null, newPerson);
-                  Navigator.of(context)
-                      .pop(newPerson); // Now safe to use context
+                  Navigator.pop(
+                      newPerson as BuildContext); // Now safe to use context
                 } catch (error) {
                   // Handle errors
                 }
